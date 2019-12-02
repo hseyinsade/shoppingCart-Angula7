@@ -1,0 +1,26 @@
+<div class="btn-group">
+  <button
+    type="button"
+    class="btn btn-secondary dropdown-toggle"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    Sepetim : {{ totalCartItemPrice | currency:'USD': true }} - ({{ totalCartItem }} Ürün)
+  </button>
+  <div class="dropdown-menu dropdown-menu-right">
+
+    <button *ngFor="let item of cartItem" class="dropdown-item" type="button">
+      {{ item.product.productName | uppercase}} - ({{ item.quantity }})
+    </button>
+
+    <div class="border-bottom my-2"></div>
+    <div class="text-center">
+      <b>
+        <span routerLink="my-cart">
+          Sepetim
+        </span>
+      </b>
+    </div>
+  </div>
+</div>
